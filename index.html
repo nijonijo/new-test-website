@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">YourLogo</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to Our Beautiful Website</h1>
+            <p>Discover amazing features and stunning design</p>
+            <a href="#features" class="cta-button">Explore Now</a>
+        </section>
+
+        <section id="features" class="features">
+            <h2>Our Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <img src="https://via.placeholder.com/64" alt="Feature 1">
+                    <h3>Responsive Design</h3>
+                    <p>Our website looks great on all devices</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://via.placeholder.com/64" alt="Feature 2">
+                    <h3>Modern UI</h3>
+                    <p>Clean and intuitive user interface</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://via.placeholder.com/64" alt="Feature 3">
+                    <h3>Fast Loading</h3>
+                    <p>Optimized for quick page loads</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>About Us</h2>
+            <p>We are passionate about creating beautiful and functional websites that help businesses grow online.</p>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+    </footer>
+
+
+  <script>
+        (function() {
+        // Enhanced CSS styles for the chat widget
+        const styles = `
+            #chatbot-widget {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                font-family: 'Arial', sans-serif;
+            }
+            #chat-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background-color: #0084ff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                position: relative;
+            }
+            #chat-icon:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            }
+            #chat-icon img {
+                width: 30px;
+                height: 30px;
+                transition: transform 0.3s ease;
+            }
+            
+        
+            #chat-icon:hover::after {
+                opacity: 1;
+            }
+            #chat-window {
+                display: none;
+                width: 300px;
+                height: 400px;
+                position: fixed;
+                bottom: 90px;
+                right: 20px;
+                background-color: white;
+                border-radius: 15px;
+                box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+                flex-direction: column;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+            #chat-header {
+                background-color: #0084ff;
+                color: white;
+                padding: 15px;
+                font-weight: bold;
+                font-size: 16px;
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+            #chat-messages {
+                flex-grow: 1;
+                overflow-y: auto;
+                padding: 15px;
+                background-color: #f7f7f7;
+            }
+            .message {
+                margin-bottom: 10px;
+                padding: 8px 12px;
+                border-radius: 18px;
+                max-width: 80%;
+                animation: fadeIn 0.3s ease;
+            }
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .user-message {
+                background-color: #0084ff;
+                color: white;
+                align-self: flex-end;
+                border-bottom-right-radius: 5px;
+            }
+            .bot-message {
+                background-color: #e5e5ea;
+                color: #000;
+                align-self: flex-start;
+                border-bottom-left-radius: 5px;
+            }
+            #chat-input {
+                display: flex;
+                padding: 10px;
+                background-color: white;
+                border-top: 1px solid #e5e5ea;
+            }
+            #chat-input input {
+                flex-grow: 1;
+                padding: 10px;
+                border: 1px solid #e5e5ea;
+                border-radius: 20px;
+                font-size: 14px;
+                transition: all 0.3s ease;
+            }
+            #chat-input input:focus {
+                outline: none;
+                border-color: #0084ff;
+                box-shadow: 0 0 0 2px rgba(0,132,255,0.2);
+            }
+            #chat-input button {
+                margin-left: 10px;
+                padding: 10px 15px;
+                background-color: #0084ff;
+                color: white;
+                border: none;
+                border-radius: 20px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-size: 14px;
+                font-weight: bold;
+            }
+            #chat-input button:hover {
+                background-color: #0066cc;
+                transform: translateY(-2px);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            #chat-input button:active {
+                transform: translateY(0);
+                box-shadow: none;
+            }
+            #chat-window {
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                opacity: 0;
+                transform: translateY(20px);
+                pointer-events: none;
+            }
+            #chat-window.open {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: all;
+            }
+        `;
+
+        // Create and append style element
+        const styleElement = document.createElement('style');
+        styleElement.textContent = styles;
+        document.head.appendChild(styleElement);
+
+        // Create chat widget HTML
+        const widgetHTML = `
+            <div id="chatbot-widget">
+                <div id="chat-icon">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z'/%3E%3C/svg%3E" alt="Chat">
+                </div>
+                <div id="chat-window">
+                    <div id="chat-header">Your AI Assistent</div>
+                    <div id="chat-messages"></div>
+                    <div id="chat-input">
+                        <input type="text" placeholder="Type a message...">
+                        <button>Send</button>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // Append widget HTML to body
+        document.body.insertAdjacentHTML('beforeend', widgetHTML);
+
+        // Get DOM elements
+        const chatIcon = document.getElementById('chat-icon');
+        const chatWindow = document.getElementById('chat-window');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatInput = document.querySelector('#chat-input input');
+        const sendButton = document.querySelector('#chat-input button');
+
+        // Function to add a message to the chat
+        function addMessage(message, isUser = false) {
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageElement.classList.add('message', isUser ? 'user-message' : 'bot-message');
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Function to send message to n8n workflow
+        async function sendToN8N(message) {
+            try {
+                const response = await fetch('http://localhost:5678/webhook/c53ca35a-5f8d-458c-a472-df9975d5ebc7/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message }),
+                });
+                const data = await response.json();
+                return data.response; // Adjust based on your n8n workflow output
+            } catch (error) {
+                console.error('Error:', error);
+                return 'Sorry, there was an error processing your request.';
+            }
+        }
+
+        // Send message when button is clicked or Enter is pressed
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                sendToN8N(message).then(response => {
+                    addMessage(response);
+                });
+            }
+        }
+
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Function to open chat window
+        function openChat() {
+            chatWindow.style.display = 'flex';
+            setTimeout(() => {
+                chatWindow.classList.add('open');
+            }, 10);
+            chatInput.focus();
+        }
+
+        // Function to close chat window
+        function closeChat() {
+            chatWindow.classList.remove('open');
+            setTimeout(() => {
+                chatWindow.style.display = 'none';
+            }, 300);
+        }
+
+        // Hover functionality
+        let hoverTimeout;
+        const chatbotWidget = document.getElementById('chatbot-widget');
+
+        chatbotWidget.addEventListener('mouseenter', () => {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = setTimeout(openChat, 300); // Start opening after 300ms hover
+        });
+
+        chatbotWidget.addEventListener('mouseleave', () => {
+            clearTimeout(hoverTimeout);
+            hoverTimeout = setTimeout(closeChat, 500); // Close chat after 500ms
+        });
+
+        // Keep chat open while hovering over it
+        chatWindow.addEventListener('mouseenter', () => {
+            clearTimeout(hoverTimeout);
+        });
+
+        // Close chat when moving mouse out of the chat window
+        chatWindow.addEventListener('mouseleave', () => {
+            hoverTimeout = setTimeout(closeChat, 500); // Close chat after 500ms
+        });
+
+        // Toggle chat window visibility on icon click (for mobile devices)
+        chatIcon.addEventListener('click', () => {
+            if (!chatWindow.classList.contains('open')) {
+                openChat();
+            } else {
+                closeChat();
+            }
+        });
+
+        // Initialize the chat window display property
+        chatWindow.style.display = 'none';
+    })();
+  </script>
+</body>
+</html>
